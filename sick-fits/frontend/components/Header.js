@@ -1,6 +1,22 @@
 import Link from 'next/link';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 import styled from 'styled-components';
 import Nav from './Nav';
+
+// Trigger loading bar on top of the screen when the route changes
+Router.onRouteChangeStart = () => {
+    NProgress.start();
+};
+
+// Finish loading bar on top of the screen when the route is changed correctly.
+Router.onRouteChangeComplete = () => {
+    NProgress.done();
+};
+
+Router.onRouteChangeError = () => {
+    NProgress.done();
+};
 
 const Logo = styled.h1`
     font-size: 4rem;
