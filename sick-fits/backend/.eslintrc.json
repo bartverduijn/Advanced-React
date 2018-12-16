@@ -1,0 +1,39 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "impliedStrict": true
+        }
+    },
+    "env": {
+        "node": true,
+        "jest": true
+    },
+    "rules": {
+        "no-unused-vars": [
+            1,
+            {
+                "argsIgnorePattern": "res|next|^err|props"
+            }
+        ],
+        "indent": [
+            2,
+            4
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "tabWidth": 4,
+                "singleQuote": true,
+                "printWidth": 100
+            }
+        ]
+    }
+}
