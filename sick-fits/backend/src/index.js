@@ -4,9 +4,9 @@ const db = require('./db');
 
 const server = createServer();
 
-// TODO: Use middleware to handle JWT cookies
+// TODO Use express middlware to handle cookies (JWT)
 
-// TODO: Use middleware to populate current user
+// TODO Use express middlware to populate current user
 
 server.start(
     {
