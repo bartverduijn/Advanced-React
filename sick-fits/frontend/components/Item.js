@@ -12,6 +12,19 @@ class Item extends Component {
         item: PropTypes.object.isRequired,
     };
 
+    // static propTypes = {
+    //     item: PropTypes.shape(
+    //         {
+    //             id: PropTypes.string.isRequired,
+    //             title: PropTypes.string.isRequired,
+    //             price: PropTypes.number.isRequired,
+    //             description: PropTypes.string.isRequired,
+    //             image: PropTypes.string,
+    //             largeImage: PropTypes.string,
+    //         }.isRequired
+    //     ),
+    // };
+
     render() {
         const { item } = this.props;
         return (
