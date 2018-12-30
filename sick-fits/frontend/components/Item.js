@@ -6,6 +6,7 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 
+/* eslint react/prefer-stateless-function: 0, react/forbid-prop-types: 0 */
 class Item extends Component {
     static propTypes = {
         item: PropTypes.object.isRequired,
