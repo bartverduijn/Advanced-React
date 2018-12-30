@@ -28,6 +28,7 @@
         ],
         "react/prop-types": 1,
         "react/react-in-jsx-scope": 0,
+        "react/jsx-one-expression-per-line": 0,
         "react/jsx-filename-extension": [
             1,
             {
