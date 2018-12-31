@@ -5,7 +5,6 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 
-/* eslint react/forbid-prop-types: 0 */
 const Item = ({ item }) => (
     <ItemStyles>
         {/* Only use image when there is one in the db */}
@@ -41,17 +40,17 @@ Item.propTypes = {
     item: PropTypes.object.isRequired,
 };
 
-// static propTypes = {
-//     item: PropTypes.shape(
-//         {
-//             id: PropTypes.string.isRequired,
-//             title: PropTypes.string.isRequired,
-//             price: PropTypes.number.isRequired,
-//             description: PropTypes.string.isRequired,
-//             image: PropTypes.string,
-//             largeImage: PropTypes.string,
-//         }.isRequired
-//     ),
-// };
+/* TODO Item.propTypes = {
+    item: PropTypes.shape(
+        {
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            description: PropTypes.string.isRequired,
+            image: PropTypes.string,
+            largeImage: PropTypes.string,
+        }.isRequired
+    ),
+}; */
 
 export default Item;
