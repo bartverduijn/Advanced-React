@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Title from './styles/Title';
@@ -6,58 +5,53 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 
-/* eslint react/prefer-stateless-function: 0, react/forbid-prop-types: 0 */
-class Item extends Component {
-    static propTypes = {
-        item: PropTypes.object.isRequired,
-    };
+/* eslint react/forbid-prop-types: 0 */
+const Item = ({ item }) => (
+    <ItemStyles>
+        {/* Only use image when there is one in the db */}
+        {item.image && <img src={item.image} alt={item.title} />}
 
-    // static propTypes = {
-    //     item: PropTypes.shape(
-    //         {
-    //             id: PropTypes.string.isRequired,
-    //             title: PropTypes.string.isRequired,
-    //             price: PropTypes.number.isRequired,
-    //             description: PropTypes.string.isRequired,
-    //             image: PropTypes.string,
-    //             largeImage: PropTypes.string,
-    //         }.isRequired
-    //     ),
-    // };
+        <Title>
+            <Link href={{ pathname: '/item', query: { id: item.id } }}>
+                <a>{item.title}</a>
+            </Link>
+        </Title>
 
-    render() {
-        const { item } = this.props;
-        return (
-            <ItemStyles>
-                {/* Only use image when there is one in the db */}
-                {item.image && <img src={item.image} alt={item.title} />}
+        <PriceTag>{formatMoney(item.price)}</PriceTag>
 
-                <Title>
-                    <Link href={{ pathname: '/item', query: { id: item.id } }}>
-                        <a>{item.title}</a>
-                    </Link>
-                </Title>
+        <p>{item.description}</p>
 
-                <PriceTag>{formatMoney(item.price)}</PriceTag>
+        <div className="buttonList">
+            <Link href={{ pathname: 'update', query: { id: item.id } }}>
+                <a>
+                    Edit{' '}
+                    <span role="img" aria-label="pencil">
+                        ✏️
+                    </span>
+                </a>
+            </Link>
 
-                <p>{item.description}</p>
+            <button type="button">Add To Cart</button>
+            <button type="button">Delete</button>
+        </div>
+    </ItemStyles>
+);
 
-                <div className="buttonList">
-                    <Link href={{ pathname: 'update', query: { id: item.id } }}>
-                        <a>
-                            Edit{' '}
-                            <span role="img" aria-label="pencil">
-                                ✏️
-                            </span>
-                        </a>
-                    </Link>
+Item.propTypes = {
+    item: PropTypes.object.isRequired,
+};
 
-                    <button type="button">Add To Cart</button>
-                    <button type="button">Delete</button>
-                </div>
-            </ItemStyles>
-        );
-    }
-}
+// static propTypes = {
+//     item: PropTypes.shape(
+//         {
+//             id: PropTypes.string.isRequired,
+//             title: PropTypes.string.isRequired,
+//             price: PropTypes.number.isRequired,
+//             description: PropTypes.string.isRequired,
+//             image: PropTypes.string,
+//             largeImage: PropTypes.string,
+//         }.isRequired
+//     ),
+// };
 
 export default Item;
