@@ -19,7 +19,7 @@
         "no-unused-vars": [
             1,
             {
-                "argsIgnorePattern": "res|next|^err|props"
+                "argsIgnorePattern": "res|next|^err"
             }
         ],
         "indent": [
