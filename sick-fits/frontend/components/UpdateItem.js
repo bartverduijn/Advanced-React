@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Router from 'next/router';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from './ErrorMessage';
@@ -39,10 +38,10 @@ class UpdateItem extends Component {
     updateItem = async (e, updateItemMutation) => {
         e.preventDefault();
         const { id } = this.props;
-        const res = await updateItemMutation({
+        await updateItemMutation({
             variables: {
                 id,
-                // We can spread the complete this.state, because our state only contains values that changed
+                // ...this.state, because our state only contains values that changed
                 ...this.state,
             },
         });
