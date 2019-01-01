@@ -27,7 +27,7 @@ const Item = ({ item }) => (
             </Link>
 
             <button type="button">Add To Cart</button>
-            <DeleteItem>Delete</DeleteItem>
+            <DeleteItem id={item.id}>Delete</DeleteItem>
         </div>
     </ItemStyles>
 );
