@@ -28,7 +28,7 @@ const ItemsList = styled.div`
     margin: 0 auto;
 `;
 
-const Items = props => (
+const Items = () => (
     <Center>
         <Query query={ALL_ITEMS_QUERY}>
             {({ data, error, loading }) => {

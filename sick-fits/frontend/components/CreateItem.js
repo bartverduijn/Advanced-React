@@ -4,7 +4,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from './ErrorMessage';
 import Form from './styles/Form';
-import formatMoney from '../lib/formatMoney';
+// import formatMoney from '../lib/formatMoney';
 
 const CREATE_ITEM_MUTATION = gql`
     mutation CREATE_ITEM_MUTATION(
