@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import ErrorMessage from './ErrorMessage';
@@ -114,6 +115,10 @@ class UpdateItem extends Component {
         );
     }
 }
+
+UpdateItem.propTypes = {
+    id: PropTypes.string.isRequired,
+};
 
 export default UpdateItem;
 export { UPDATE_ITEM_MUTATION };

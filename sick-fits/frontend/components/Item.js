@@ -33,20 +33,14 @@ const Item = ({ item }) => (
 );
 
 Item.propTypes = {
-    item: PropTypes.object.isRequired,
+    item: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string,
+        largeImage: PropTypes.string,
+    }).isRequired,
 };
-
-/* TODO Item.propTypes = {
-    item: PropTypes.shape(
-        {
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-            description: PropTypes.string.isRequired,
-            image: PropTypes.string,
-            largeImage: PropTypes.string,
-        }.isRequired
-    ),
-}; */
 
 export default Item;
