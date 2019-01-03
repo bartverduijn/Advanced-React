@@ -45,7 +45,7 @@ class DeleteItem extends Component {
 }
 
 DeleteItem.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     id: PropTypes.string.isRequired,
 };
 
