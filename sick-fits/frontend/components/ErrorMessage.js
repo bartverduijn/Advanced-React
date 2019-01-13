@@ -25,11 +25,12 @@ const DisplayError = ({ error }) => {
         error.networkError.result &&
         error.networkError.result.errors.length
     ) {
-        return error.networkError.result.errors.map((error, i) => (
+        return error.networkError.result.errors.map((err, i) => (
+            /* eslint react/no-array-index-key: 0 */
             <ErrorStyles key={i}>
                 <p data-test="graphql-error">
                     <strong>Shoot!</strong>
-                    {error.message.replace('GraphQL error: ', '')}
+                    {err.message.replace('GraphQL error: ', '')}
                 </p>
             </ErrorStyles>
         ));
@@ -49,7 +50,7 @@ DisplayError.defaultProps = {
 };
 
 DisplayError.propTypes = {
-    error: PropTypes.object,
+    error: PropTypes.node,
 };
 
 export default DisplayError;
