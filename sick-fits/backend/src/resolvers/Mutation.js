@@ -73,6 +73,12 @@ const Mutations = {
 
         return user;
     },
+
+    signout(parent, args, ctx, info) {
+        // response.clearCookie comes from cookieParser in index.js
+        ctx.response.clearCookie('token');
+        return { message: 'Goodbye!' };
+    },
 };
 
 module.exports = Mutations;
