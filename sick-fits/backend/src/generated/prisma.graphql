@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/bart-verduijn-b2837c/sick-fits/dev
-# timestamp: Tue Feb 12 2019 20:43:18 GMT+0100 (Central European Standard Time)
+# timestamp: Sat Apr 06 2019 12:00:38 GMT+0200 (Central European Summer Time)
 
 type AggregateItem {
   count: Int!
@@ -34,6 +34,7 @@ type ItemConnection {
 }
 
 input ItemCreateInput {
+  id: ID
   title: String!
   description: String!
   image: String
@@ -468,6 +469,7 @@ type UserConnection {
 }
 
 input UserCreateInput {
+  id: ID
   name: String!
   email: String!
   password: String!
