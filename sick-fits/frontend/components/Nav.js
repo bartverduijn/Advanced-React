@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Nav() {
 	return (
@@ -8,5 +8,5 @@ export default function Nav() {
 			<Link href="/orders">Orders</Link>
 			<Link href="/account">Account</Link>
 		</nav>
-	)
+	);
 }
